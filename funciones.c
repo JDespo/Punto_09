@@ -29,7 +29,7 @@ int pop(STR_NODO **pila)
 
 void ordenarPila(STR_NODO **pila)
 {
-    STR_NODO *aux = NULL;
+     STR_NODO *aux = NULL;
     STR_NODO *aux2 = NULL;
 
         while( pila != NULL)
@@ -39,18 +39,24 @@ void ordenarPila(STR_NODO **pila)
             if(aux == NULL)
             {
                 push(&aux, numero);
+                printf("\nNULL: AUX->NUM: %i\n",aux->numero);
             }
-            else
-            {
+            else{
+                printf("\nAUX->NUM: %i\n",aux->numero);
+                printf("PILA: %i\n",numero);
                 while(aux!= NULL && numero >= aux->numero)
                 {
+                    printf("WHILE AUX->NUM: %i\n",aux->numero);
                     push(&aux2, pop(&aux));
+                    printf("\npush aux2 -> pop aux %i\n",aux2->numero);
                 }
                 
                 push(&aux, numero);
+                printf("GUARDO NUM EN AUX\n");
 
                 while(aux2 != NULL)
                 {   
+                    printf("push aux pop aux2\n");
                     push(&aux, pop(&aux2));
                 }
             }
