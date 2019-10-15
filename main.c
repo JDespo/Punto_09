@@ -58,6 +58,6 @@ int main()
      printf("\n  ...::: PRINTEO PILA ORDENADA :::...\n");
     while(pila != NULL)
     {
-        printf("\tPila Num: %i\n", pop(&pila));
+        printf("\tNum en PILA: [%i]\n", pop(&pila));
     }
 }
