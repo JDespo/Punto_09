@@ -35,13 +35,13 @@ void ordenarPila(STR_NODO **pila)
 
     int numero = pop(pila);
     push(&aux, numero);
-    printf("\n\n\tPRIMER PASO: \nnumero = pop(pila) %i // push(&aux, numero) %i\n", numero);
+    printf("\n\n\tPRIMER PASO: \nnumero = pop(pila) [%i] // push(&aux, numero) [%i]\n", numero);
 
     printf("\n\t..:: COMIENZO WHILE ORDENAMIENTO ::.. \n while( *pila != NULL)\n");
         while( *pila != NULL)
         {   
             numero = pop(pila);
-            printf("\n\t numero = pop(pila) [%i]",numero);
+            printf("\n\t:::ASIGNO numero = pop(pila) [%i]:::\n",numero);
             printf("\n\tWHILE aux != NULL && numero >= aux->numero\n");
 
             while(aux!= NULL && numero <= aux->numero)
