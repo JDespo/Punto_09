@@ -11,3 +11,4 @@ typedef struct NODO
 void push(STR_NODO **pila, int numero);
 STR_NODO *crearNodo(int dato);
 int pop(STR_NODO **pila);
+void ordenarPila(STR_NODO **pila);
