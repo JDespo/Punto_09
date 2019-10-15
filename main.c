@@ -15,46 +15,45 @@ int main()
         push(&pila, nNum[i]);
         i++;
     }
-    
-    ordenarPila(&pila);
-    // STR_NODO *aux = NULL;
-    // STR_NODO *aux2 = NULL;
 
-    //     while( pila != NULL)
-    //     {
+    STR_NODO *aux = NULL;
+    STR_NODO *aux2 = NULL;
+
+        while( pila != NULL)
+        {
             
-    //         int numero = pop(&pila);
-    //         if(aux == NULL)
-    //         {
-    //             push(&aux, numero);
-    //             printf("\nNULL: AUX->NUM: %i\n",aux->numero);
-    //         }
-    //         else{
-    //             printf("\nAUX->NUM: %i\n",aux->numero);
-    //             printf("PILA: %i\n",numero);
-    //             while(aux!= NULL && numero >= aux->numero)
-    //             {
-    //                 printf("WHILE AUX->NUM: %i\n",aux->numero);
-    //                 push(&aux2, pop(&aux));
-    //                 printf("\npush aux2 -> pop aux %i\n",aux2->numero);
-    //             }
+            int numero = pop(&pila);
+            if(aux == NULL)
+            {
+                push(&aux, numero);
+                printf("\nNULL: AUX->NUM: %i\n",aux->numero);
+            }
+            else{
+                printf("\nAUX->NUM: %i\n",aux->numero);
+                printf("PILA: %i\n",numero);
+                while(aux!= NULL && numero >= aux->numero)
+                {
+                    printf("WHILE AUX->NUM: %i\n",aux->numero);
+                    push(&aux2, pop(&aux));
+                    printf("\npush aux2 -> pop aux %i\n",aux2->numero);
+                }
                 
-    //             push(&aux, numero);
-    //             printf("GUARDO NUM EN AUX\n");
+                push(&aux, numero);
+                printf("GUARDO NUM EN AUX\n");
 
-    //             while(aux2 != NULL)
-    //             {   
-    //                 printf("push aux pop aux2\n");
-    //                 push(&aux, pop(&aux2));
-    //             }
-    //         }
-    //     }
+                while(aux2 != NULL)
+                {   
+                    printf("push aux pop aux2\n");
+                    push(&aux, pop(&aux2));
+                }
+            }
+        }
 
-    //     while(aux != NULL)
-    //     {
-    //         push(&pila, pop(&aux));
-    //     }
-    
+        while(aux != NULL)
+        {
+            push(&pila, pop(&aux));
+        }
+    //ordenarPila(&pila);
     while(pila != NULL)
     {
         printf("Pila Num: %i\n", pop(&pila));
